@@ -21,3 +21,9 @@ class Weather:
         # TODO: Process incoming weather messages. Set the temperature and status.
         #
         #
+        weather_message = message.value()
+
+        self.temperature = weather_message['temperature']
+        self.status = weather_message['status']
+
+        logger.info(f"Temperature({self.temperature}) || Status({self.status})")
