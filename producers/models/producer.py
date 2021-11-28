@@ -64,20 +64,16 @@ class Producer:
         #
         client = AdminClient({"bootstrap.servers": "PLAINTEXT://localhost:9092"})
 
-        new_topic = NewTopic(
-            topic=self.topic_name,
-            num_partitions=self.num_partitions,
-            replication_factor=self.num_replicas,
-        )
-         futures = client.create_topics([
-            NewTopic(
+       
+        futures = client.create_topics([
+              NewTopic(
                 topic = self.topic_name,
                 num_partitions = self.num_partitions, 
                 replication_factor = self.num_replicas,
                 config = {'cleanup.policy' : 'compact',
                         'compression.type' : 'lz4', 
                         'delete.retention.ms' : 2000, 
-                        'file.delete.delay.ms' : 20000}
+                        'file.delete.delay.ms' : 2000}
                 )
             ])
         for topic,future in futures.items():
@@ -101,7 +97,7 @@ class Producer:
         # TODO: Write cleanup code for the Producer here
         #
         #
-        self.producer.flush(10)
+        self.producer.flush()
         self.producer.close()
       #  logger.info("producer close incomplete - skipping")
 

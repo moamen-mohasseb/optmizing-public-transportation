@@ -1,10 +1,10 @@
 {
-  "namespace": "com.udacity.project",
+  "namespace": "pt.udacity-nd.opt.dhss",
   "type": "record",
   "name": "turnstile.value",
   "fields": [
-      {"name" : "station_id", "type" : "int"},
-      {"name" : "station_name", "type" : "string"},
-       {"name" : "line", "type" : "string"}
+      {"name": "station_id", "type": "int"},
+      {"name": "station_name", "type": "string"},
+      {"name": "line", "type": "string"}
   ]
 }

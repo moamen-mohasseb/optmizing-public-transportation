@@ -1,9 +1,16 @@
 {
-  "namespace": "com.udacity.project",
+  "namespace": "pt.udacity-nd.opt.dhss",
   "type": "record",
   "name": "weather.value",
   "fields": [
-    {"name": "temperature", "type": "float"},
-    {"name": "status", "type": "string"}
+      {"name": "temperature", "type": "float"},
+  	{
+      "name": "status",
+      "type": {
+        "type": "enum",
+        "name": "weather_status",
+        "symbols": ["sunny", "partly_cloudy", "cloudy", "windy", "precipitation"]
+      }
+    }
   ]
 }

@@ -24,8 +24,8 @@ class Weather(Producer):
     rest_proxy_url = "http://localhost:8082"
 
     key_schema = None
-    value_schema = None
 
+    value_schema = None
     winter_months = set((0, 1, 2, 3, 10, 11))
     summer_months = set((6, 7, 8))
 
